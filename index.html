@@ -1,46 +1,73 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>One Piece 2024 - AnimeBoy</title>
-  <link href="style.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo Leveling Season 2 - Tonton Anime</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(to right, navy, darkred);
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .video-container {
+      background: white;
+      margin: 20px auto;
+      padding: 10px;
+      max-width: 900px;
+      border: 3px solid navy;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+    }
+    .download-btn {
+      display: block;
+      width: fit-content;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: navy;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .episode-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px;
+    }
+    .episode-btn {
+      padding: 8px 16px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>One Piece: Egghead Arc (2024)</h1>
+    <h1>Solo Leveling Season 2</h1>
+    <p>Tonton dan Muat Turun Semua Episod</p>
   </header>
 
-  <main>
-    <div class="video-container">
-      <iframe id="videoPlayer" src="https://streamtape.com/e/xxxxxxx" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <a id="downloadLink" href="https://shrinke.me/sample-episode" target="_blank" class="download-btn">Muat Turun Episod Ini</a>
+  <div class="video-container">
+    <iframe id="videoPlayer" src="https://streamtape.com/e/abcd1234567890/" frameborder="0" allowfullscreen></iframe>
+    <a id="downloadLink" class="download-btn" href="https://shrinke.me/solo-leveling-ep1" target="_blank">Muat Turun Episod Ini</a>
+  </div>
 
-    <div id="episodeList" class="episode-list"></div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 AnimeBoy. All rights reserved.</p>
-  </footer>
+  <div class="episode-list" id="episodeList"></div>
 
   <script src="episodes.js"></script>
-  <script>
-    const episodeList = document.getElementById("episodeList");
-    const videoPlayer = document.getElementById("videoPlayer");
-    const downloadLink = document.getElementById("downloadLink");
-
-    episodes.forEach(ep => {
-      const btn = document.createElement("button");
-      btn.textContent = `Episod ${ep.number}`;
-      btn.onclick = () => {
-        videoPlayer.src = ep.video;
-        downloadLink.href = ep.download;
-        downloadLink.innerText = `Muat Turun Episod ${ep.number}`;
-      };
-      episodeList.appendChild(btn);
-    });
-  </script>
 </body>
 </html>

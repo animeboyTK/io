@@ -1,6 +1,21 @@
 
 const episodes = [
-  { number: 1125, video: "https://streamtape.com/e/xxxxxxx", download: "https://shrinke.me/onepiece1125" },
-  { number: 1124, video: "https://streamtape.com/e/yyyyyyy", download: "https://shrinke.me/onepiece1124" },
-  { number: 1123, video: "https://streamtape.com/e/zzzzzzz", download: "https://shrinke.me/onepiece1123" }
+  { title: "Episod 1", video: "https://streamtape.com/e/abcd1234567890/", dl: "https://shrinke.me/solo-leveling-ep1" },
+  { title: "Episod 2", video: "https://streamtape.com/e/efgh2345678901/", dl: "https://shrinke.me/solo-leveling-ep2" },
+  { title: "Episod 3", video: "https://streamtape.com/e/ijkl3456789012/", dl: "https://shrinke.me/solo-leveling-ep3" }
 ];
+
+const videoPlayer = document.getElementById("videoPlayer");
+const downloadLink = document.getElementById("downloadLink");
+const episodeList = document.getElementById("episodeList");
+
+episodes.forEach((ep, index) => {
+  const btn = document.createElement("button");
+  btn.innerText = ep.title;
+  btn.className = "episode-btn";
+  btn.onclick = () => {
+    videoPlayer.src = ep.video;
+    downloadLink.href = ep.dl;
+  };
+  episodeList.appendChild(btn);
+});
